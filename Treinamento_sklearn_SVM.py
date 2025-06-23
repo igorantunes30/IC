@@ -135,7 +135,7 @@ pd.DataFrame({
 
 pd.DataFrame(report).transpose().to_excel("relatorio_classificacao.xlsx")
 
-# Matriz de confusão
+
 plt.figure(figsize=(5, 4))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=["Não-MEL", "MEL"], yticklabels=["Não-MEL", "MEL"])
 plt.xlabel("Predito")
@@ -145,7 +145,7 @@ plt.tight_layout()
 plt.savefig("matriz_confusao.png")
 plt.show()
 
-# Curva ROC
+
 fpr, tpr, _ = roc_curve(y_test, y_proba)
 roc_auc = auc(fpr, tpr)
 
@@ -161,7 +161,7 @@ plt.tight_layout()
 plt.savefig("curva_roc.png")
 plt.show()
 
-# Comparação entre modelos
+
 results_df = pd.DataFrame(grid.cv_results_)
 results_df[['params', 'mean_test_score', 'rank_test_score', 'mean_fit_time']].sort_values(by='rank_test_score').to_excel("gridsearch_resultados.xlsx", index=False)
 
@@ -179,7 +179,7 @@ plt.tight_layout()
 plt.savefig("comparacao_modelos_gridsearch.png")
 plt.show()
 
-# Salvar modelo e scaler
+
 joblib.dump(grid.best_estimator_, "modelo_svm_final.pkl")
 joblib.dump(scaler, "scaler_svm_final.pkl")
 print("\n💾 Modelo salvo como: modelo_svm_final.pkl")
