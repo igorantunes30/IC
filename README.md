@@ -1,5 +1,7 @@
 ## 🧐 Treinamento de Modelos de Detecção de Melanoma
 
+## Ivan Igor Antunes Neves - 201907040042
+
 Este projeto realiza o treinamento e avaliação de modelos de **classificação binária (MEL vs não-MEL)** utilizando **SVM (Support Vector Machines)** com engenharia de características baseadas em **histograma de cor, LBP (Local Binary Pattern)** e **HOG (Histogram of Oriented Gradients)**.
 
 ---
