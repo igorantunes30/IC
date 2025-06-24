@@ -70,7 +70,7 @@ print("🔍 Avaliando modelo...")
 y_pred = modelo.predict(X_test)
 y_proba = modelo.predict_proba(X_test)[:, 1]
 
-# === Relatório ===
+# ============= Relatório ========================
 print("\n📊 Relatório de Classificação:")
 print(classification_report(y_test, y_pred, target_names=["Não-MEL", "MEL"]))
 
